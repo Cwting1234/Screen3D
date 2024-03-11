@@ -5,6 +5,6 @@ function render(){
     renderer.render(scene,camera);
    
     requestAnimationFrame(render);
-    // console.log(camera.position);
+    console.log(camera.position);
 }
 render();

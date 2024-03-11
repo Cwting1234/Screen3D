@@ -10,12 +10,12 @@
 </template>
 
 <script>
-//import webglContent from "./components/webglContent.vue";
+import webglContent from "./components/webglContent.vue";
 export default {
   name: "HomeView",
-  // components: {
-  //   webglContent
-  // },
+  components: {
+    webglContent
+  },
   data() {
     return {
       // controls: null,

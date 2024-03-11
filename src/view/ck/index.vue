@@ -1,7 +1,8 @@
 <template>
   <header>智慧工厂</header>
+  <div id="webgl" class="webgl-content"></div>
 </template>
-   
+
 <script>
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -13,10 +14,10 @@ export default {
   data() {
     return {};
   },
-  created() {},
+  created() { },
   methods: {
     initThree() {
-     
+
       let width = window.innerWidth; //窗口宽
       let height = window.innerHeight;
       this.renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -45,7 +46,7 @@ export default {
       this.controls.enablePan = false;
       // this.controls.maxDistance=1700;
       this.controls.maxPolarAngle = Math.PI * 0.48;
-      document.body.appendChild(this.renderer.domElement);
+      
 
       let objLoader = new GLTFLoader();
       objLoader.load("/lib/model/yuanqu.glb", function (glb) {
@@ -59,8 +60,9 @@ export default {
       // orbitControls.maxPolarAngle = Math.PI * 0.48;
       // orbitControls.update();
 
-      document.body.appendChild(this.renderer.domElement);
+      document.getElementById('webgl').appendChild(this.renderer.domElement);
     },
+ 
 
     animate() {
       //this.controls.update();
@@ -75,20 +77,20 @@ export default {
     this.initThree();
     this.animate();
   },
-  onUnmounted() {},
+  onUnmounted() { },
 };
 </script>
-   
-   <!-- Add "scoped" attribute to limit CSS to this component only -->
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: url(../../assets/images/px.jpg) no-repeat;
-}
+// body {
+//   width: 100%;
+//   height: 100%;
+//   margin: 0;
+//   padding: 0;
+//   overflow: hidden;
+//   background: url(../../assets/images/px.jpg) no-repeat;
+// }
 .container {
   position: relative;
   width: 100%;
@@ -103,6 +105,13 @@ header {
   color: white;
   font-size: 2rem;
   line-height: 3.5rem;
+  z-index: 100;
+}
+
+#webgl {
+  position: absolute; 
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
 }
 </style>
-   
