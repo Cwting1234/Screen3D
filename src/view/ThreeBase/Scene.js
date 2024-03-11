@@ -21,7 +21,7 @@ scene.add(directionLight2);
 const ambientLight = new THREE.AmbientLight(0xffffff, 1.5); // 光颜色和强度
 scene.add(ambientLight); // 将环境光添加到场景中
 const texture = new THREE.TextureLoader().load("/lib/images/全景图4096.jpg");
-const geometry = new THREE.SphereGeometry(800, 50, 50);
+const geometry = new THREE.SphereGeometry(500, 80, 80);
 // const geometry = new THREE.CylinderGeometry( 200, 200, 200, 32 );
 const material = new THREE.MeshBasicMaterial({
     map: texture,

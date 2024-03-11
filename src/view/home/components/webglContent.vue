@@ -8,7 +8,7 @@ import { scene } from "../../ThreeBase/Scene";
 import { renderer, camera } from "../../ThreeBase/Renderer";
 import "../../ThreeBase/RendererLoop";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
+
 
 export default {
   name: "webglContent",
