@@ -61,7 +61,12 @@ html,body{
   background-size: 100% 100%;
   
 }
-
+#webgl {
+  position: absolute; 
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+}
 .header-container {
   position: relative;
   height: 7.13vh;

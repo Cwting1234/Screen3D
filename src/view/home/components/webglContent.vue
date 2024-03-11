@@ -40,18 +40,42 @@ export default {
       scene.add(group);     
     },
  
+    clearCache() {
+     // cancelAnimationFrame(this.rafId);
+      // 优化清除
+      this.renderer.dispose();
+      //this.renderer.forceContextLoss();
+      this.renderer = null;
+      this.scene.remove(group);
+      this.scene.children.forEach((item) => {
+        item.traverse((child) => {
+          if (child.isMesh) {
+            child.geometry.dispose();
+            child.material.dispose();
+          }
+        });
+        this.scene.remove(item);
+      });
+      this.scene.children = [];
+      this.scene.dispose();
+      THREE.Cache.clear();
+      // this.scene = null;
+      // this.camera = null;
+      // this.css3DRenderer = null;
+      // this.orbitControls.dispose();
+      this.orbitControls = null;
+    },
   },
   mounted() {
     this.initThree();
+
+  },
+  beforeDestroy() {   
+    this.clearCache();
   },
 };
 </script>
 
 <style lang="scss">
-#webgl {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  z-index: 99;
-}
+
 </style>
