@@ -12,15 +12,20 @@ const routes = [
         component: () =>import('@/view/home') 
     },
     {
-        path: '/case', 
+        path: '/caseIndex', 
         name:'case',
         component: () =>import('@/view/case') 
     },
     {
-        path: '/ck', 
+        path: '/caseCk', 
         name:'ck',
-        component: () =>import('@/view/ck') 
-    }
+        component: () =>import('@/view/case/ck') 
+    },
+    {
+        path: '/caseLc', 
+        name:'lc',
+        component: () =>import('@/view/case/lc') 
+    },
 ];
 
 
@@ -28,5 +33,6 @@ const router = createRouter({
     history: createWebHistory(),
     routes
 });
+
 
 export default router;

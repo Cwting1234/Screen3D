@@ -10,6 +10,7 @@ const camera=new THREE.PerspectiveCamera(40,width/height,1,3000);
 //创建渲染器
 const renderer=new THREE.WebGLRenderer({
     antialias:true,//开启抗锯齿
+    alpha: true,
 });
 //设置像素比率,防止画布模糊
 renderer.setPixelRatio(window.devicePixelRatio);

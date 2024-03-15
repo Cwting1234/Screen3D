@@ -7,7 +7,7 @@
             <div style="display: flex; flex-direction: row; justify-content: center;">
             <div class="container" @click="gotoUrl('ck')">
                 <div class="item">
-                    <img src="../../assets/images/组 1.png" style="width: 300px;height: 100px;" />
+                    <img src="../../assets/images/组 1.png" style="width: 200px;height: 80px;" />
                     <p class="text">智慧仓库</p>
                 </div>
 
@@ -15,7 +15,7 @@
             </div>
             <div class="container" style="margin-left: 100px;" @click="gotoUrl('home')">
                 <div class="item">
-                    <img src="../../assets/images/组 1.png" style="width: 300px;height: 100px;" />
+                    <img src="../../assets/images/组 1.png" style="width: 200px;height: 80px;" />
                     <p class="text">智慧园区</p>
                 </div>
 
@@ -23,9 +23,9 @@
             </div>
         </div>
         <div style="display: flex; flex-direction: row; justify-content: center;">
-            <div class="container">
+            <div class="container" @click="gotoUrl('lc')">
                 <div class="item">
-                    <img src="../../assets/images/组 1.png" style="width: 300px;height: 100px;" />
+                    <img src="../../assets/images/组 1.png" style="width: 200px;height: 80px;" />
                     <p class="text">智慧粮仓</p>
                 </div>
 
@@ -33,7 +33,7 @@
             </div>
             <div class="container" style="margin-left: 100px;">
                 <div class="item">
-                    <img src="../../assets/images/组 1.png" style="width: 300px;height: 100px;" />
+                    <img src="../../assets/images/组 1.png" style="width: 200px;height: 80px;" />
                     <p class="text">智慧物流</p>
                 </div>
             </div>
@@ -71,7 +71,7 @@ export default {
 .case-sc {
     display: flex;
     flex-direction: column;
-    margin-top:200px;
+    margin-top:100px;
    
 }
 
@@ -80,7 +80,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 150px;
     margin-left: 100px;
 }
 

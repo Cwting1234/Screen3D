@@ -1,4 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
+const path = require('path')
 module.exports = defineConfig({
   chainWebpack: (config) => {
     config.plugin('define').tap((definitions) => {
@@ -10,6 +11,31 @@ module.exports = defineConfig({
       return definitions
     })
   },
+  devServer: {
+    port: 8900,
+    open: true,
+    hot: true,
+    historyApiFallback: true, // 添加这一行配置
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:3001',
+        ws: true,
+        pathRewrite: {
+          '^/api': '/'
+        }
+      }
+    },
+  
+
+  },
   transpileDependencies: true,
-  lintOnSave:false
+  lintOnSave: false,
+  // 添加路由配置
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src')
+      }
+    },
+  },
 })
